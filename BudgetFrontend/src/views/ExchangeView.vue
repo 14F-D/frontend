@@ -1,22 +1,24 @@
 <template>
   <div class="container text-center ">
     <div class="row align-items-start">
+      <h3>Select the currency below, you would like to change!</h3>
       <div class="box">
         <select v-model="selectedCurrencyFrom">
           <option v-for="currency in currencies">{{ currency }} </option>
         </select>
         <div class="mb-3">
-          <label class="form-label">Amount</label>
+          <h1>Amount</h1>
           <input type="number" v-model="InputCurrencyAmount" class="form-control">
         </div>
       </div>
+      <h3>Select the currency below, you would like to exchange into!</h3>
       <div class="box">
         <select v-model="selectedCurrencyTo">
           <option v-for="currency in currencies">{{ currency }} </option>
         </select>
         <div class="mb-3">
           <label class="form-label">Amount</label>
-          <p>{{ OutputCurrencyAmount }} {{ selectedCurrencyTo }}</p>
+          <h3>{{ InputCurrencyAmount }} {{ selectedCurrencyFrom }} = {{ OutputCurrencyAmount }} {{ selectedCurrencyTo }}</h3>
         </div>
         <button class="btn btn-primary" @click="Convert()">Show</button>
       </div>
@@ -75,11 +77,11 @@ exchangeData.getAllCurrencies()
 }
 
 .box select {
-  background-color: #0563af;
+  background-color: rgb(25, 63, 233);;
   color: white;
   padding: 12px;
   width: 250px;
-  border: none;
+  border-radius: 5px;
   font-size: 20px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   /* -webkit-appearance: button; */
@@ -92,6 +94,7 @@ exchangeData.getAllCurrencies()
   font-family: FontAwesome;
   position: absolute;
   width: 20%;
+  border-radius: 5px;
   height: 100%;
   text-align: center;
   font-size: 28px;

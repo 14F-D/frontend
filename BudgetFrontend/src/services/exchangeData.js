@@ -1,6 +1,6 @@
 import Axios from 'axios';
 Axios.defaults.baseURL = 'https://api.apilayer.com/exchangerates_data';
-Axios.defaults.headers['apikey'] = 'Ae6O5TTSBAKbNaeF0Q9knpy1yK16RC71';
+Axios.defaults.headers['apikey'] = '461sU8wsuIKGn04TNV4R4hqJRlRDGsvI';
 
 export default {
     getAllCurrencies(){
