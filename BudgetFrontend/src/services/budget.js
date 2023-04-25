@@ -16,14 +16,14 @@ export default {
     getIncomesByUserId(userId){
         return Axios.get(`/incomes/${userId}`)
     },
-    createIncomes(){
-        return Axios.post(`/incomes/create`)
+    createIncome(incomeData){
+        return Axios.post(`/incomes/create`,incomeData)
     },
-    updateIncomes(userId){
-        return Axios.put(`/incomes/update/${userId}`)
+    updateIncomes(EditIncomeData,Id){
+        return Axios.put(`/incomes/update/${Id}`,EditIncomeData)
     },
     deleteIncomes(userId){
-        return Axios.delete(`/incomes//delete/${userId}`)
+        return Axios.delete(`/incomes/delete/${userId}`)
     },
     getByExpenseId(expenseId){
         return Axios.get(`/tagsExpenses/expense/${expenseId}`)

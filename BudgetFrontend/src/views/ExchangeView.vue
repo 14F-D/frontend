@@ -16,7 +16,7 @@
         </select>
         <div class="mb-3">
           <label class="form-label">Amount</label>
-          <p>{{ OutputCurrencyAmount }}</p>
+          <p>{{ OutputCurrencyAmount }} {{ selectedCurrencyTo }}</p>
         </div>
         <button class="btn btn-primary" @click="Convert()">Show</button>
       </div>

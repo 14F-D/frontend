@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-<!-- Expenses Modal -->
+    <!-- Expenses Modal -->
     <ExpenseModal></ExpenseModal>
 
     <div class="col-lg-6 card">
@@ -94,7 +94,9 @@
                   <p>{{ income.date }}</p>
                 </td>
                 <td class="align-middle">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs">Edit</a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#EditIncomeModal"
+                    @click="getIncomeId(income.id)" data-bs-whatever="@fat"
+                    class="text-secondary font-weight-bold text-xs">Edit</a>
                   <!-- <a
                     href="javascript:;"
                     class="text-secondary font-weight-bold text-xs"
@@ -113,6 +115,7 @@
 
   <!-- Income Modal -->
   <IncomeModal></IncomeModal>
+  <EditInComeModal :IncomeId="IncomeId"></EditInComeModal>
 </template>
   
 <script setup>
@@ -121,28 +124,29 @@ import budgetData from '../services/budget'
 import { useUserStore } from '../stores/users'
 import ExpenseModal from '../components/ExpenseModal.vue'
 import IncomeModal from '../components/IncomeModal.vue'
+import EditInComeModal from '../components/EditIncomeModal.vue'
 let expenses = ref([])
 let expensesType = ref([])
 let incomes = ref([])
 let userId = ref()
 let tags = ref([])
 let expenseId = ref([])
-let NewExpenseAmount = ref()
-let NewExpenseType = ref()
-let NewExpenseDate = ref()
+let IncomeId = ref()
 const user = useUserStore();
-function asd() {
-  console.log(localStorage.getItem("userId"))
-  console.log(Boolean(localStorage.getItem("isLoggedin")))
-}
 userId.value = localStorage.getItem("userId")
+
+function getIncomeId(incomeId) {
+  IncomeId.value= incomeId
+  console.log(IncomeId.value)
+}
+
 
 budgetData.getExpensesByUserId(userId.value)
   .then(resp => {
     expenses.value = resp.data
     expenses.value.forEach(element => {
       budgetData.getByExpenseId(element.id)
-      .then(resp => {
+        .then(resp => {
           expensesType.value = resp.data
           getTags()
         })
@@ -184,9 +188,8 @@ function getTags() {
       })
   });
 }
-console.log(tags.value)
+//console.log(tags.value)
 </script>
-
 
 <style scoped>
 #AddButton {
