@@ -6,7 +6,7 @@ export const useUserStore = defineStore({
         users: [],
         user: 0,
         userId: 0,
-        isLoggedIn:false
+        isLoggedIn:false,
     }),
     getters: {
     },

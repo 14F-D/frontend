@@ -31,4 +31,10 @@ export default {
     getTagById(id){
         return Axios.get(`/tags/${id}`)
     },
+    getUsersById(Id) {
+        return Axios.get(`/users/${Id}`)
+    },
+    UpdateUserById(Id,userData) {
+        return Axios.put(`/users/${Id}`,userData)
+    },
 }

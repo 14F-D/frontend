@@ -7,8 +7,6 @@
                     <nav class="nav nav-tabs flex-column">
                         <router-link to="profile" class="nav-link">Profile</router-link>
                         <router-link to="usersettings" class="nav-link">Password</router-link>
-                        <a href="user-billing-settings.html" class="nav-link">Billing</a>
-                        <a href="user-notification-settings.html" class="nav-link">Notifications</a>
                     </nav>
                 </div>
             </div>
