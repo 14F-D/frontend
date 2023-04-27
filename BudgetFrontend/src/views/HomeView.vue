@@ -4,10 +4,11 @@
 
 <template>
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-4 ms-2">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">News</h5>
+            <hr>
             <p class="card-text">Added more currencies!</p>
             <p class="card-text">External servers might be slow!</p>
             <p class="card-text">Please be patient! Thank you for your understanding!</p>
@@ -21,6 +22,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Budgetcalculator</h5>
+            <hr>
             <p class="card-text">Manage your future!</p>
             <p class="card-text">Login or register to access the budget panel!</p>
             <div class="row">
@@ -34,10 +36,11 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
-        <div class="card">
+      <div class="col-lg-3">
+        <div class="card ">
           <div class="card-body">
             <h5 class="card-title">Exchange your currency!</h5>
+            <hr>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <div class="col-lg-12">
               <router-link class="btn btn-danger" to="/exchange">Exchange page</router-link>
@@ -50,6 +53,9 @@
 
 <style scoped>
 
+.row{
+  color: white;
+}
 .card-title{
   font-size: 2rem;
   font-weight: bold;

@@ -30,9 +30,6 @@ function logout() {
               <RouterLink class="nav-link" to="/">Home</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/about">About</RouterLink>
-            </li>
-            <li class="nav-item">
               <RouterLink class="nav-link" to="/news">News</RouterLink>
             </li>
             <li v-if="userStore.isLoggedIn" class="nav-item">
@@ -40,6 +37,9 @@ function logout() {
             </li>
             <li class="nav-item">
               <RouterLink class="nav-link" to="/exchange">Exchange Rates</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/about">About</RouterLink>
             </li>
           </ul>
           <div class="dropdown">
@@ -75,6 +75,7 @@ function logout() {
 </template>
 
 <style scoped>
+
 .nav-link {
   color: white;
 }
