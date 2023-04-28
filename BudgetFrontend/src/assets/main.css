@@ -1,5 +1,7 @@
-.background{
-    background-image: url("../assets/backgroundpic.jpg");
-    min-height: 100vh;
+body{
+    /* background-image: url("../assets/backgroundpic.jpg"); */
+    background-size: cover;
     background-repeat: no-repeat;
+    background-color: rgb(32, 30, 30);
+
 }

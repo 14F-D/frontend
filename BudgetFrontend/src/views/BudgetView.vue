@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-lg-6 card">
+    <div class="col-lg-6 card bg-secondary">
       <div class="card-header pb-0">
         <h3>Expenses</h3>
       </div>
@@ -9,16 +9,16 @@
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                <th class="text-uppercase  text-xxs font-weight-bolder opacity-7">
                   Amount
                 </th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                <th class="text-uppercase  text-xxs font-weight-bolder opacity-7 ps-2">
                   Type
                 </th>
-                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                <th class="text-center text-uppercase  text-xxs font-weight-bolder opacity-7">
                   Date
                 </th>
-                <th class="text-secondary opacity-7"></th>
+                <th class=" opacity-7"></th>
               </tr>
             </thead>
             <tbody>
@@ -39,7 +39,7 @@
                   <p>{{ expense.date }}</p>
                 </td>
                 <td class="align-middle">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs">Edit</a>
+                  <a href="javascript:;" class="font-weight-bold text-xs">Edit</a>
                   <!-- <a
                     href="javascript:;"
                     class="text-secondary font-weight-bold text-xs"
@@ -57,7 +57,7 @@
     <!-- Expenses Modal -->
     <ExpenseModal></ExpenseModal>
 
-    <div class="col-lg-6 card">
+    <div class="col-lg-6 card bg-secondary ">
       <div class="card-header pb-0">
         <h3>Income</h3>
       </div>
@@ -66,16 +66,16 @@
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                <th class="text-uppercase  text-xxs font-weight-bolder opacity-7">
                   Amount
                 </th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2">
                   Type
                 </th>
-                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">
                   Date
                 </th>
-                <th class="text-secondary opacity-7"></th>
+                <th class="opacity-7"></th>
               </tr>
             </thead>
             <tbody>
@@ -96,7 +96,7 @@
                 <td class="align-middle">
                   <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#EditIncomeModal"
                     @click="getIncomeId(income.id)" data-bs-whatever="@fat"
-                    class="text-secondary font-weight-bold text-xs">Edit</a>
+                    class="font-weight-bold text-xs">Edit</a>
                   <!-- <a
                     href="javascript:;"
                     class="text-secondary font-weight-bold text-xs"

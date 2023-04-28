@@ -17,9 +17,9 @@ function logout() {
 
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg  ">
       <div class="container-fluid">
-        <router-link class="nav-link" to="/"><img src="./assets/budgetPNG.png" alt="" /></router-link>
+        <router-link class="nav-link" to="/"><img src="./assets/logo.png" class="logo" alt="" /></router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -76,12 +76,15 @@ function logout() {
 
 <style scoped>
 
+.logo{
+  width: 12rem;
+}
 .nav-link {
   color: white;
 }
 
 header {
-  background-color: rgb(255, 124, 124);
+  background-color: rgb(123, 120, 120);
   background-image: url("../assets/headerbackground.jpg");;
 }
 

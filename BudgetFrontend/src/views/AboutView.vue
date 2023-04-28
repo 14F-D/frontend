@@ -1,6 +1,6 @@
 <template>
-  <div class="background">
-    <div class="container my-4">
+  <div>
+    <div class="container my-4 text-light ">
       <section class="mb-4">
         <h1>About Us</h1>
         <hr>
@@ -12,7 +12,7 @@
 
       <section>
         <h2 class="pb-2">Our Team</h2>
-        <div class="row">
+        <div class="row text-dark">
           <div class="col-md-4 mb-4">
             <div class="card">
               <div class="card-body">
@@ -41,6 +41,7 @@
       </section>
     </div>
   </div>
+
 </template>
 
 <style scoped>

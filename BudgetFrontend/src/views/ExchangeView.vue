@@ -1,5 +1,5 @@
 <template>
-  <div class="container text-center ">
+  <div class="container text-center text-light">
     <div class="row align-items-start">
       <h3>Select the currency below, you would like to change!</h3>
       <div class="box">
@@ -18,7 +18,7 @@
         </select>
         <div class="mb-3">
           <label class="form-label">Amount</label>
-          <h3>{{ InputCurrencyAmount }} {{ selectedCurrencyFrom }} = {{ OutputCurrencyAmount }} {{ selectedCurrencyTo }}</h3>
+          <h3>{{ InputCurrencyAmount }} {{ selectedCurrencyFrom }} = {{ Math.round(OutputCurrencyAmount) }} {{ selectedCurrencyTo }}</h3>
         </div>
         <button class="btn btn-primary" @click="Convert()">Show</button>
       </div>
