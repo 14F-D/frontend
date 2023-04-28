@@ -69,7 +69,7 @@
 }
 
 .card {
-  background-color: rgb(25, 63, 233);
+  background-color: #4e66d0;
   font-size: 1.5rem;
   margin-bottom: 30px;
   margin-top: 25px;

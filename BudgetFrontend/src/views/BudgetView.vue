@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-lg-6 card bg-secondary">
+    <div class="col-lg-6 card bg-secondary ">
       <div class="card-header pb-0">
         <h3>Expenses</h3>
       </div>
@@ -22,7 +22,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="expense in expenses">
+              <tr v-for="expense in expenses" class="text-light">
                 <td>
                   <div class="d-flex px-2 py-1">
                     <div class="d-flex flex-column justify-content-center">
@@ -39,7 +39,7 @@
                   <p>{{ expense.date }}</p>
                 </td>
                 <td class="align-middle">
-                  <a href="javascript:;" class="font-weight-bold text-xs">Edit</a>
+                  <a href="javascript:;" class="font-weight-bold text-xs btn btn-secondary">Edit</a>
                   <!-- <a
                     href="javascript:;"
                     class="text-secondary font-weight-bold text-xs"
@@ -64,7 +64,7 @@
       <div class="card-body px-0 pt-0 pb-2">
         <div class="table-responsive p-0">
           <table class="table align-items-center mb-0">
-            <thead>
+            <thead >
               <tr>
                 <th class="text-uppercase  text-xxs font-weight-bolder opacity-7">
                   Amount
@@ -79,7 +79,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="income in incomes">
+              <tr v-for="income in incomes" class="text-light">
                 <td>
                   <div class="d-flex px-2 py-1">
                     <div class="d-flex flex-column justify-content-center">
@@ -96,7 +96,7 @@
                 <td class="align-middle">
                   <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#EditIncomeModal"
                     @click="getIncomeId(income.id)" data-bs-whatever="@fat"
-                    class="font-weight-bold text-xs">Edit</a>
+                    class="font-weight-bold text-xs btn btn-secondary">Edit</a>
                   <!-- <a
                     href="javascript:;"
                     class="text-secondary font-weight-bold text-xs"
