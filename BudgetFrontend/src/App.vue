@@ -76,6 +76,8 @@ function logout() {
 
 <style scoped>
 
+
+
 .nav-link {
   color: white;
 }

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="row">
+    <div class="row scrollable-container background" id="Home">
       <div class="col-lg-4 ms-2">
         <div class="card">
           <div class="card-body">
@@ -43,7 +43,7 @@
             <hr>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <div class="col-lg-12">
-              <router-link class="btn btn-danger" to="/exchange">Exchange page</router-link>
+              <router-link class="btn btn-danger" to="/exchange">Exchange rates</router-link>
             </div>
           </div>
         </div>
@@ -52,6 +52,12 @@
 </template>
 
 <style scoped>
+
+#Home{
+  background-size: cover;
+  overflow: hidden;
+  position: fixed;
+}
 
 .row{
   color: white;

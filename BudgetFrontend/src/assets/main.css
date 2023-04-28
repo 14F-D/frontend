@@ -1,0 +1,5 @@
+.background{
+    background-image: url("../assets/backgroundpic.jpg");
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
