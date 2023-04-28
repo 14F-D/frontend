@@ -76,14 +76,13 @@ function logout() {
 
 <style scoped>
 
-
-
 .nav-link {
   color: white;
 }
 
 header {
-  background-color: rgb(25, 63, 233);
+  background-color: rgb(255, 124, 124);
+  background-image: url("../assets/headerbackground.jpg");;
 }
 
 .sub-menu-text {
