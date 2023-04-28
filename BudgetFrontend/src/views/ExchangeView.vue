@@ -20,7 +20,7 @@
           <label class="form-label">Amount</label>
           <h3>{{ InputCurrencyAmount }} {{ selectedCurrencyFrom }} = {{ Math.round(OutputCurrencyAmount) }} {{ selectedCurrencyTo }}</h3>
         </div>
-        <button class="btn btn-primary" @click="Convert()">Show</button>
+        <button class="btn btn-success" @click="Convert()">Show</button>
       </div>
     </div>
   </div>
@@ -32,8 +32,8 @@ import { ref } from 'vue'
 import exchangeData from '../services/exchangeData'
 let selectedCurrencyTo = ref();
 let selectedCurrencyFrom = ref();
-let InputCurrencyAmount = ref();
-let OutputCurrencyAmount = ref();
+let InputCurrencyAmount = ref(0);
+let OutputCurrencyAmount = ref(0);
 
 let data = ref([])
 
@@ -77,7 +77,7 @@ exchangeData.getAllCurrencies()
 }
 
 .box select {
-  background-color: rgb(25, 63, 233);;
+  background-color: rgb(80, 79, 79);;
   color: white;
   padding: 12px;
   width: 250px;

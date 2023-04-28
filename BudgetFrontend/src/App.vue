@@ -84,7 +84,7 @@ function logout() {
 }
 
 header {
-  background-color: rgb(123, 120, 120);
+  background-color: rgb(80, 79, 79);
   background-image: url("../assets/headerbackground.jpg");;
 }
 

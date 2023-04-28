@@ -3,20 +3,20 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="card card-fluid">
-                    <h6 class="card-header"> Your Details </h6>
-                    <nav class="nav nav-tabs flex-column">
-                        <router-link to="profile" class="nav-link">Profile</router-link>
-                        <router-link to="usersettings" class="nav-link">Password</router-link>
+                    <h6 class="card-header bg-secondary"> Your Details </h6>
+                    <nav class="nav nav-tabs flex-column bg-secondary">
+                        <router-link to="profile" class="nav-link text-light">Profile</router-link>
+                        <router-link to="usersettings" class="nav-link text-light">Password</router-link>
                     </nav>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="card card-fluid">
-                    <h6 class="card-header"> Account </h6>
-                    <div class="card-body">
+                    <h6 class="card-header bg-secondary"> Account </h6>
+                    <div class="card-body bg-secondary">
                         <form>
                             <div class="form-group col-lg-6 col-md-6 col-sm-4">
-                                <label for="input03">Username</label>
+                                <label for="input03" class="text-light">Username</label>
                                 <div class="row">
                                     <div class="col-lg-4 pe-0">
                                         <input type="text" class="form-control" v-model="userData.username"
@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-4">
                                 <div class="row">
-                                    <label for="input03">Email</label>
+                                    <label for="input03 " class="text-light">Email</label>
                                     <div class="col-lg-4 pe-0">
                                         <input type="email" class="form-control " v-model="userData.email"
                                             :disabled="inputEmailEnabler" id="input03">
@@ -42,7 +42,7 @@
                             <hr>
                             <div class="form-actions">
                                 <button type="button" class="btn btn-primary" @click="Change()">Update Account</button>
-                                <button type="button" class="btn btn-primary" @click="asd()">asd</button>
+                                <!-- <button type="button" class="btn btn-primary" @click="asd()">asd</button> -->
                             </div>
                         </form>
                     </div>

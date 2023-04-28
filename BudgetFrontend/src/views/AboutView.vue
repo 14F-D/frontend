@@ -45,4 +45,7 @@
 </template>
 
 <style scoped>
+p{
+  font-size: larger;
+}
 </style>

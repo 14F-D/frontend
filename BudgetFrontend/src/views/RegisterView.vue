@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container text-light">
         <form @submit.prevent="submit">
             <h2 class="mb-3">Register</h2>
             <div class="input">
