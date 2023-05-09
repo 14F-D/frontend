@@ -4,14 +4,14 @@ export default {
     getExpensesByUserId(userId){
         return Axios.get(`/expenses/${userId}`)
     },
-    createExpenses(){
-        return Axios.post(`/expenses/create`)
+    createExpenses(expenseData){
+        return Axios.post(`/expenses/create`,expenseData)
     },
-    updateExpenses(userId){
-        return Axios.put(`/expenses/update/${userId}`)
+    updateExpenses(Id,expenseData){
+        return Axios.put(`/expenses/update/${Id}`,expenseData)
     },
-    deleteExpenses(userId){
-        return Axios.delete(`/expenses//delete/${userId}`)
+    deleteExpenses(Id){
+        return Axios.delete(`/expenses//delete/${Id}`)
     },
     getIncomesByUserId(userId){
         return Axios.get(`/incomes/${userId}`)
@@ -19,11 +19,11 @@ export default {
     createIncome(incomeData){
         return Axios.post(`/incomes/create`,incomeData)
     },
-    updateIncomes(EditIncomeData,Id){
-        return Axios.put(`/incomes/update/${Id}`,EditIncomeData)
+    updateIncomes(editIncomeData,Id){
+        return Axios.put(`/incomes/update/${Id}`,editIncomeData)
     },
-    deleteIncomes(userId){
-        return Axios.delete(`/incomes/delete/${userId}`)
+    deleteIncomes(Id){
+        return Axios.delete(`/incomes/delete/${Id}`)
     },
     getByExpenseId(expenseId){
         return Axios.get(`/tagsExpenses/expense/${expenseId}`)
@@ -36,5 +36,11 @@ export default {
     },
     UpdateUserById(Id,userData) {
         return Axios.put(`/users/${Id}`,userData)
+    },
+    getAllTags(){
+        return Axios.get(`/tags`)
+    },
+    createTagsExpenses(tagExpenseId){
+        return Axios.post(`/tagsExpenses/create`,tagExpenseId)
     },
 }

@@ -39,12 +39,10 @@
                   <p>{{ expense.date }}</p>
                 </td>
                 <td class="align-middle">
-                  <a href="javascript:;" class="font-weight-bold text-xs btn btn-secondary">Edit</a>
-                  <!-- <a
-                    href="javascript:;"
-                    class="text-secondary font-weight-bold text-xs"
-                    >Delete</a
-                  > -->
+                  <a href="javascript:;" @click="getExpsenseId(expense.id)" data-bs-toggle="modal"
+                    data-bs-target="#EditExpenseModal" data-bs-whatever="@fat"
+                    class="font-weight-bold text-xs btn btn-secondary">Edit</a>
+                  <a href="javascript:;" class="font-weight-bold text-xs btn btn-secondary" @click="deleteExpenses(expense.id)">Delete</a>
                 </td>
               </tr>
             </tbody>
@@ -54,8 +52,10 @@
         </div>
       </div>
     </div>
+
     <!-- Expenses Modal -->
-    <ExpenseModal></ExpenseModal>
+    <ExpenseModal :ExpenseId="ExpenseId"></ExpenseModal>
+    <EditExpenseModal :ExpenseId="ExpenseId"></EditExpenseModal>
 
     <div class="col-lg-6 card bg-secondary ">
       <div class="card-header pb-0">
@@ -64,7 +64,7 @@
       <div class="card-body px-0 pt-0 pb-2">
         <div class="table-responsive p-0">
           <table class="table align-items-center mb-0">
-            <thead >
+            <thead>
               <tr>
                 <th class="text-uppercase  text-xxs font-weight-bolder opacity-7">
                   Amount
@@ -97,11 +97,7 @@
                   <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#EditIncomeModal"
                     @click="getIncomeId(income.id)" data-bs-whatever="@fat"
                     class="font-weight-bold text-xs btn btn-secondary">Edit</a>
-                  <!-- <a
-                    href="javascript:;"
-                    class="text-secondary font-weight-bold text-xs"
-                    >Delete</a
-                  > -->
+                  <a href="javascript:;" class="font-weight-bold text-xs btn btn-secondary" @click="DeleteIncome(income.id)">Delete</a>
                 </td>
               </tr>
             </tbody>
@@ -125,21 +121,44 @@ import { useUserStore } from '../stores/users'
 import ExpenseModal from '../components/ExpenseModal.vue'
 import IncomeModal from '../components/IncomeModal.vue'
 import EditInComeModal from '../components/EditIncomeModal.vue'
+import EditExpenseModal from '../components/EditExpenseModal.vue'
 let expenses = ref([])
 let expensesType = ref([])
 let incomes = ref([])
 let userId = ref()
 let tags = ref([])
-let expenseId = ref([])
+let ExpenseId = ref()
 let IncomeId = ref()
 const user = useUserStore();
 userId.value = localStorage.getItem("userId")
 
 function getIncomeId(incomeId) {
-  IncomeId.value= incomeId
+  IncomeId.value = incomeId
   console.log(IncomeId.value)
 }
+function getExpsenseId(expenseId) {
+  ExpenseId.value = expenseId
+  console.log(ExpenseId.value)
+}
 
+function DeleteIncome(incomeId) {
+  budgetData.deleteIncomes(incomeId)
+    .then(resp => {
+      location.reload()
+    })
+    .catch(err => {
+      console.log(err);
+    })
+}
+function deleteExpenses(expenseId) {
+  budgetData.deleteExpenses(expenseId)
+    .then(resp => {
+      location.reload()
+    })
+    .catch(err => {
+      console.log(err);
+    })
+}
 
 budgetData.getExpensesByUserId(userId.value)
   .then(resp => {
@@ -170,12 +189,6 @@ budgetData.getIncomesByUserId(userId.value)
     console.log(err);
   })
 
-// budgetData.createExpenses()
-//   .then(resp => {
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   })
 
 function getTags() {
   expensesType.value.forEach(element => {
