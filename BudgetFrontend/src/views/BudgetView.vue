@@ -160,19 +160,21 @@ function deleteExpenses(expenseId) {
     })
 }
 
+
 budgetData.getExpensesByUserId(userId.value)
-  .then(resp => {
-    expenses.value = resp.data
-    expenses.value.forEach(element => {
-      budgetData.getByExpenseId(element.id)
-        .then(resp => {
-          expensesType.value = resp.data
-          getTags()
-        })
-        .catch(err => {
-          console.log(err);
-        })
-    });
+.then(resp => {
+  expenses.value = resp.data
+  expenses.value.forEach(element => {
+    budgetData.getByExpenseId(element.id)
+    .then(resp => {
+      expensesType.value = resp.data
+      console.log("resp",resp.data)
+      getTags()
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  });
     //console.log(expenses.value)
   })
   .catch(err => {
@@ -190,18 +192,22 @@ budgetData.getIncomesByUserId(userId.value)
   })
 
 
-function getTags() {
+  function getTags() {
+    tags.value = []
+  console.log("tagsvalue",tags.value)
   expensesType.value.forEach(element => {
+    console.log("fos",expensesType.value.length)
     budgetData.getTagById(element.tagId)
-      .then(resp => {
-        tags.value.push(resp.data)
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    .then(resp => {
+      console.log("kaki",expensesType.value);
+      console.log("resp2",resp.data)
+      tags.value.push(resp.data)
+    })
+    .catch(err => {
+      console.log(err);
+    })
   });
 }
-//console.log(tags.value)
 </script>
 
 <style scoped>

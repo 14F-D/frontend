@@ -11,7 +11,7 @@ export default {
         return Axios.put(`/expenses/update/${Id}`,expenseData)
     },
     deleteExpenses(Id){
-        return Axios.delete(`/expenses//delete/${Id}`)
+        return Axios.delete(`/expenses/delete/${Id}`)
     },
     getIncomesByUserId(userId){
         return Axios.get(`/incomes/${userId}`)

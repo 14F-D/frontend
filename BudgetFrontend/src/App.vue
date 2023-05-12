@@ -2,13 +2,16 @@
 import { RouterLink, RouterView } from "vue-router";
 import { ref } from "vue";
 import { useUserStore } from './stores/users'
+import { useRouter } from 'vue-router';
 const { logoutUser,isLoggedIn } = useUserStore();
+const router = useRouter();
 let userStore = useUserStore()
 userStore.isLoggedIn = Boolean(localStorage.getItem("isLoggedIn"))
 
 function logout() {
   logoutUser()
     .then(() => {
+      router.push('/');
       console.log(userStore.isLoggedIn)
     })
 }
